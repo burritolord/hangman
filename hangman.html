@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>This is hangman!!</title>
+    <script>
+     var guessed_letter = document.getElementById('current_guess');
+//     guessed_letter.addEventListener('onkeyup', function() {
+//       var guessed_list = document.getElementById('guessed_list');
+//       var guessed_value = guessed_list.innerHTML;
+//       if( guessed_value != ''){
+//         guessed_list.innerHTML =
+//       }
+//     });
+
+        function guessSubmit(form){
+            var guessed_value = form.guess_box.value;
+            var blah = "s".match('/[a-zA-Z0-9]/');
+            // Check if guessed value is a letter
+            if(guessed_value.match('[a-zA-Z0-9]{1}') === null){
+                alert("Must be alphanumeric");
+                return false;
+            }
+            var guessed_list = document.getElementById('guessed_list');
+            guessed_list.innerHTML = guessed_value;
+        }
+    </script>
+  </head>
+  <body>
+    <pre id="game_board">
+      ------
+      |    |
+      |
+      |
+      |
+      |
+      |
+      |
+   -------
+    </pre>
+    <div id="word">
+        <form id="current_guess" onsubmit="return guessSubmit(this)">
+            <label for="guess_letter">Enter letter:</label>
+            <input type="text" id="guess_letter" size="1" name="guess_box" maxlength="1">
+            <input type="button" value="Guess">
+        </form>
+    </div>
+    <div id="past_guess">
+      Guessed:<span id="guessed_list"></span>
+    </div>
+  </body>
+</html>
