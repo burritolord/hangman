@@ -1,32 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>This is hangman!!</title>
-    <script>
-     var guessed_letter = document.getElementById('current_guess');
-//     guessed_letter.addEventListener('onkeyup', function() {
-//       var guessed_list = document.getElementById('guessed_list');
-//       var guessed_value = guessed_list.innerHTML;
-//       if( guessed_value != ''){
-//         guessed_list.innerHTML =
-//       }
-//     });
-
-        function guessSubmit(form){
-            var guessed_value = form.guess_box.value;
-            var blah = "s".match('/[a-zA-Z0-9]/');
-            // Check if guessed value is a letter
-            if(guessed_value.match('[a-zA-Z0-9]{1}') === null){
-                alert("Must be alphanumeric");
-                return false;
-            }
-            var guessed_list = document.getElementById('guessed_list');
-            guessed_list.innerHTML = guessed_value;
-        }
-    </script>
+      <meta charset="UTF-8">
+      <title>This is hangman!!</title>
+      <link type="text/css" href="stylesheet.css" rel="stylesheet">
+      <script src="Hangman.js"></script>
   </head>
   <body>
+    <h1 id="game_title">Hang Man</h1>
+    <div id="new_word">
+        <label for="hidden_word">Enter word: </label>
+        <input type="text" id="hidden_word" size="20" name="guess_box" maxlength="20" autocomplete="off">
+        <input id="hidden_word_button" type="button" value="Save">
+    </div>
     <pre id="game_board">
       ------
       |    |
@@ -38,15 +24,20 @@
       |
    -------
     </pre>
-    <div id="word">
-        <form id="current_guess" onsubmit="return guessSubmit(this)">
-            <label for="guess_letter">Enter letter:</label>
-            <input type="text" id="guess_letter" size="1" name="guess_box" maxlength="1">
-            <input type="button" value="Guess">
-        </form>
+    <div>
+        <h3 id="dash_word"></h3>
+    </div>
+    <div id="guess">
+        <label for="guess_box">Enter letter: </label>
+        <input type="text" id="guess_box" size="1" name="guess_box" maxlength="1" autocomplete="off">
+        <input id="guess_button" type="button" value="Guess">
     </div>
     <div id="past_guess">
-      Guessed:<span id="guessed_list"></span>
+      Guessed: <span id="guessed_list"></span>
     </div>
+    <br>
+    <br>
+    <br>
+
   </body>
 </html>
