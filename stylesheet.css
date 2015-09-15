@@ -1,3 +1,35 @@
 #game_title {
   text-align: center;
 }
+
+#letters button{
+  padding: 1em;
+  margin: .5em;
+  width: 3.3em;
+  height: 3.3em;
+}
+
+#new_word_tmp {
+  padding: 1em;
+  margin: .5em;
+  width: 12em;
+  height: 3.3em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  position: relative;
+  left: 50%;
+  margin-left: -21.8%;
+}
+
+#new_word_wrapper {
+  text-align: center;
+}
+
+#dash_word {
+  position: relative;
+  left: 50%;
+  margin-left: -21.8%;
+}
